@@ -1,0 +1,55 @@
+<main class="form-signin w-100 m-auto" style="max-width:300px">
+<center>
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+</center>
+
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="form-floating">
+    <%= f.email_field :email, class:"form-control mt-3", id:"floatingInput", autofocus: true, autocomplete: "email" %>
+          <label for="floatingInput">Email address</label>
+  
+    </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+        <div class="form-floating">
+    <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control mt-3 mb-3" %>
+      <label for="floatingPassword">Old password</label>
+
+  </div>
+ 
+<div class="form-floating">
+    <%= f.password_field :password, class:"form-control mt-3 mb-3", id:"floatingInput", autocomplete: "new-password" %>
+    <label for="floatingPassword">New password</label>
+    </div>
+
+
+
+
+        <div class="form-floating">
+    <%= f.password_field :password_confirmation, class:"form-control mt-3 mb-3", id:"floatingInput", autocomplete: "new-password" %>
+    <label for="floatingPassword">New password</label>
+    </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Update", class:"btn btn-primary w-100 py-2" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger w-100 py-2" %></div>
+
+<%= link_to "Back", :back %>
+
+
+</main>

@@ -1,0 +1,36 @@
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <%= link_to root_path, :class => "d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" do %>
+
+        <span class="fs-4">🌟 Friends 🌟</span>
+<% end %>
+
+
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+        
+        <%= link_to "About Us", home_about_path, class:"nav-link" %></li>
+        <li class="nav-item">
+        
+        <%= link_to "New friend", new_friend_path, class:"nav-link active rounded-pill" %></li>
+        <li class="nav-item">
+
+
+        <% if user_signed_in? %>
+        <%= link_to "sign out", destroy_user_session_path, method: :delete, class:"nav-link" %></li>
+        <li class="nav-item">
+        <%= link_to "Edit profile", edit_user_registration_path, class:"nav-link" %></li>
+      <%= link_to "friends", friends_path, class:"nav-link" %></li>
+        <li class="nav-item">
+      
+      <% else %>
+              <%= link_to "Sign in", new_user_session_path, class:"nav-link" %></li>
+        <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class:"nav-link" %></li>
+        <li class="nav-item">
+        <% end %>
+      
+      </ul>
+      
+    </header>
+  </div>

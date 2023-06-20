@@ -1,0 +1,36 @@
+<main class="form-signin w-100 m-auto" style="max-width:300px">
+<center>
+<h1>🌟 Friends 🌟</h1>
+<h2>Sign up</h2>
+</center>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="form-floating">
+    <%= f.email_field :email, class:"form-control mt-3", id:"floatingInput", autofocus: true, autocomplete: "email" %>
+          <label for="floatingInput">Email address</label>
+  
+    </div>
+
+
+<div class="form-floating">
+    <%= f.password_field :password, class:"form-control mt-3 mb-3", id:"floatingInput", autocomplete: "new-password" %>
+    <label for="floatingPassword">Password</label>
+    </div>
+
+
+
+    <div class="form-floating">
+    <%= f.password_field :password_confirmation, class:"form-control mt-3 mb-3", id:"floatingInput", autocomplete: "new-password" %>
+    <label for="floatingPassword">Password</label>
+    </div>
+
+
+  <div class="actions">
+    <%= f.submit "Sign up", class:"btn btn-primary w-100 py-2" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</main>

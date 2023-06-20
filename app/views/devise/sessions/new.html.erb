@@ -1,0 +1,42 @@
+<main class="form-signin w-100 m-auto" style="max-width:300px">
+<center>
+<h1>🌟 Friends 🌟</h1>
+<h2>Log in</h2>
+</center>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="form-floating">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.email_field :email, class:"form-control mt-3",  type:"email", placeholder:"Email", autofocus: true, autocomplete: "email" %>
+          <label for="floatingInput">Email address</label>
+  
+    </div>
+    <div class="form-floating">
+    <%= f.password_field :password, class:"form-control mt-3 mb-3", id:"floatingInput", placeholder:"Password", autocomplete: "current-password" %>
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-check text-start my-3">
+      <% if devise_mapping.rememberable? %>
+    <div class="field form-group">
+      <%= f.check_box :remember_me, class:"form-check-input" %>
+      <%= f.label :remember_me, class:"form-check-label" %>
+    </div>
+  <% end %>
+
+    </div>
+        <%= f.submit "Log in", class:"btn btn-primary w-100 py-2" %>
+    <div class="actions w-100 py-2">
+  <% end %>
+
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+</main>
+
+
+
+
+
