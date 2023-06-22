@@ -1,24 +1,15 @@
-# README
+# Boilerplate for RoR DPU Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails application where every user can insert entries for the user to view privately.
 
-Things you may want to cover:
+Step 1.
+Clone repository
 
-* Ruby version
+Step 2.
+'bundle install'
 
-* System dependencies
+Step 3.
+'rails s'
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
