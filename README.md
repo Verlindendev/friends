@@ -6,10 +6,10 @@ Step 1.
 Clone repository
 
 Step 2.
-'bundle install'
+```bundle install```
 
 Step 3.
-'rails s'
+```rails s```
 
 
 
